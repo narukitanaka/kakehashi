@@ -1,0 +1,188 @@
+/*************************************************
+about
+*************************************************/
+
+
+#about{
+  padding-top: 118px;
+  width: 100%;
+  .about_fv{
+    position: relative;
+    min-height: 340px;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/about_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include mq(){
+      min-height: 194px;
+    }
+  }
+
+  h1{
+    position: absolute;
+    font-size: 36px;
+    color: #fff;
+    font-weight: bolder;
+    letter-spacing: 0.3rem;
+    background-color: #DF2B00;
+    padding: 1% 1.5%;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mq(){
+      font-size: 24px;
+      top: 30%;
+    }
+  }
+
+  .about_fv::after{
+    position: absolute;
+    width: fit-content;
+    white-space: nowrap;
+    content: url(../images/about_us.svg);
+    color: #FFECE8;
+    font-size: 91px;
+    font-family: 'gill';
+    font-weight: bolder;
+    letter-spacing: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -13%;
+    // @include mq(){
+    //   content: url(../images/company_top_sp.svg);
+    //   bottom: -17%;
+    // }
+  }
+}
+
+#about_kakehashi{
+  padding: 80px 0;
+  .section_inner{
+    position: relative;
+    padding: 160px 0;
+    background-image: url(../images/okinawa.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    h2{
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 50px;
+      line-height: 1.8;
+      color: #1A1A1A;
+      letter-spacing: 0.3rem;
+    }
+    .about_text {
+      width: 420px;
+      text-align: center;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 2;
+      color: #1A1A1A;
+    }
+
+    .about_img_01{
+      position: absolute;
+      top:100px;
+      left: 0px;
+    }
+
+    .about_img_02{
+      position: absolute;
+      top:400px;
+      left: 110px;
+    }
+
+    .about_img_03{
+      position: absolute;
+      top:200px;
+      right: 0;
+    }
+
+    .about_img_04{
+      position: absolute;
+      top:500px;
+      right: 115px;
+    }
+  }
+}
+
+.about_us_img{
+  img{
+    width: 100%;
+  }
+}
+
+/*************************************************
+かけはしの強み
+*************************************************/
+
+#strength{
+  .section_inner{
+    margin-bottom: 100px;
+    h2{
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 50px;
+      line-height: 1.8;
+      color: #1A1A1A;
+      letter-spacing: 0.3rem;
+    }
+     .strength_text{
+      text-align: center;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 2;
+      color: #1A1A1A;
+      margin-bottom: 50px;
+     }
+     img{
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+     }
+  }
+}
+
+/*************************************************
+かけはしのこだわり
+*************************************************/
+
+#commitment{
+  background-color: #fff;
+  background-image: url(../images/commitment_bg.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  .section_inner{
+    .commitment_box{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 80px;
+      h2{
+        font-size: 26px;
+        font-weight: bold;
+        margin-bottom: 50px;
+        line-height: 1.8;
+        color: #1A1A1A;
+        letter-spacing: 0.3rem;
+      }
+      p{
+        font-size: 15px;
+        line-height: 2.3;
+      }
+
+      .commitment_box_left{
+        flex-basis: 50%;
+      }
+
+      .commitment_box_right{
+        flex-basis: 45%;
+      }
+    }
+  }
+}

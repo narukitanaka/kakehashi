@@ -1,0 +1,182 @@
+/*************************************************
+common-style
+*************************************************/
+@mixin base_width{
+  margin: 0 auto;
+  width: 1280px;
+}
+// @extendでスタイルの継承
+// @mixinでステイルの定義
+// @includeでmixinの呼び出し
+
+// ブレイクポイント
+// PC基準でコーディングする場合
+$breakpoints: (
+  "sm": "screen and (max-width: 599px)", //スマホ
+  "md": "screen and (max-width: 1024px)", //タブレット
+) !default;
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints , $breakpoint)} {
+    @content;
+  }
+}
+
+// スマホ基準でコーディングする場合
+// $breakpoints: (
+//   "md": "screen and (min-width: 600px)", //タブレット
+//   "lg": "screen and (min-width: 1025px)", //パソコン
+// ) !default;
+// @mixin mq($breakpoint: sm) {
+//   @media #{map-get($breakpoints , $breakpoint)} {
+//     @content;
+//   }
+// }
+
+*{
+  box-sizing: border-box;
+}
+
+.ie_ObjectFit {
+object-fit: cover;
+font-family: 'object-fit: cover;'
+}
+
+body{
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+body{
+  position: relative;
+}
+
+.clearfix:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+.test{
+  @include mq(){
+    // スマホ用css
+  }
+}
+
+// /iOSでのデフォルトスタイルをリセット /
+input[type="submit"],
+input[type="button"] {
+border-radius: 0;
+-webkit-box-sizing: content-box;
+-webkit-appearance: button;
+appearance: button;
+border: none;
+box-sizing: border-box;
+&::-webkit-search-decoration {
+display: none;
+}
+&::focus {
+outline-offset: -2px;
+}
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.bg_test{
+  position: relative;
+  background-color: #FFECE8;
+  z-index: 0;
+}
+
+
+.bg_img_fix{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  img{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+}
+
+// フォント
+
+@font-face{
+  font-family: 'gill';
+  src: url(../font/GillSans.ttc);
+}
+
+
+
+
+.section_inner{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.title_img{
+  width: fit-content;
+  margin: 0 auto;
+  padding: 8% 0;
+  img{
+    @include mq(){
+      width: 100%;
+    }
+  }
+}
+
+.kazari{
+  width: 100%;
+  img{
+    width: 100%;
+    @include mq(){
+      width: 100%;
+      height: 64px;
+      object-fit: cover;
+    }
+  }
+}
+
+.is_pc{
+  display: block;
+  @include mq(){
+    display: none!important;
+  }
+}
+
+.is_sp{
+  display: none;
+  @include mq(){
+    display: block;
+  }
+}
+
+// パンくずリスト
+
+nav{
+  width: 1200px;
+  margin: 2% auto 0;
+  .breadcrumbs{
+    color: #232215;
+    font-size: 14px;
+    display: flex;
+  }
+  @include mq(){
+    width: 100%;
+    padding: 0 10px;
+  }
+}
+
+.breadcrumbs li::after{
+  content: '>';
+  display: inline-block;
+  padding: 0 10px; /*左右に余白*/
+}
+
+.breadcrumbs li:last-child::after{
+  display: none;
+}
+

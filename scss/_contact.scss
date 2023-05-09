@@ -1,0 +1,106 @@
+/*************************************************
+コンタクト
+*************************************************/
+
+#contact{
+  padding-top: 118px;
+  width: 100%;
+  @include mq(){
+    width: 100%;
+    padding-top: 70px;
+  }
+  .contact_fv {
+    position: relative;
+    min-height: 340px;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/contact_bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include mq(){
+      min-height: 194px;
+    }
+  }
+  h1{
+    position: absolute;
+    font-size: 36px;
+    color: #fff;
+    font-weight: bolder;
+    letter-spacing: 0.3rem;
+    background-color: #DF2B00;
+    padding: 1% 1.5%;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mq(){
+      font-size: 24px;
+      top: 30%;
+    }
+  }
+  .contact_fv::after{
+    position: absolute;
+    width: fit-content;
+    white-space: nowrap;
+    content: url(../images/contact.svg);
+    color: #FFECE8;
+    font-size: 91px;
+    font-family: 'gill';
+    font-weight: bolder;
+    letter-spacing: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -13%;
+    @include mq(){
+      content: url(../images/company_top_sp.svg);
+      bottom: -17%;
+    }
+  }
+}
+
+/*************************************************
+お問い合わせ_コンテンツ
+*************************************************/
+
+#contact_contents{
+    padding: 100px 0;
+    .contact_text{
+      text-align: center;
+      line-height: 1.8;
+      a{
+        text-decoration: underline;
+      }
+    }
+    .contact_tel{
+      position: relative;
+      margin-top: 50px;
+      padding: 30px 0;
+      p{
+        text-align: center;
+        font-size: 20px;
+      }
+      a{
+        display: block;
+        text-align: center;
+        font-size: 41px;
+        margin: 30px 0px 0 0;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bolder;
+        img{
+          margin-right: 30px;
+        }
+      }
+    }
+
+    .contact_tel::before{
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 160px;
+      background-color: #FFFBE9;
+      top:0;
+      left:0;
+      z-index: -2;
+    }
+  
+}

@@ -1,0 +1,292 @@
+/*************************************************
+top
+*************************************************/
+
+.body_bg{
+  background-image: url(../images/bgbgbg.png);
+  background-size: cover;
+  min-height: 100%;
+  background-attachment: fixed; /*--背景画像の固定--*/
+  background-repeat: no-repeat;
+  @include mq(){
+    background-image: url(../images/bgbgbg_sp.png);
+  }
+}
+
+
+
+
+/*************************************************
+ FV
+*************************************************/
+
+#fv{
+  position: relative;
+  height: 910px;
+  background-image: url(../images/fv_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  @include mq(){
+    position: absolute;
+    top: -50px;
+    width: 100%;
+    padding: 0 20px;
+    background-image: url(../images/top_bg_sp.png);
+  }
+  .fv_main_img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include mq(){
+      top: 45%;
+    }
+  }
+}
+
+.kazari_sp{
+  @include mq(){
+    position: absolute;
+    top: 93vh;
+  }
+}
+
+/*************************************************
+スライド
+*************************************************/
+#slide{
+  @include mq(){
+    width: 100%;
+    padding: 0 20px;
+    transform: translateY(550px);
+  }
+  .slider{
+    width: 100%;
+    overflow: hidden;
+    @include mq(){
+      overflow: visible;
+    //   .slick-dots li button:before{
+    //     color: #fff;
+    //     opacity: 1;
+    //   }
+    //   .slick-dots li.slick-active button:before {
+    //     opacity: .75;
+    //     content: '.';
+    //     background: linear-gradient(#fff, #0067E2);
+    //     border-radius: 10px;
+    // }
+    }
+  }
+
+  
+}
+
+/*************************************************
+商品カテゴリ
+*************************************************/
+
+#category{
+  @include mq(){
+    width: 100%;
+    padding: 0 20px;
+    padding-top: 650px;
+    margin-bottom: 50px;
+  }
+  .category_wrapper{
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 5%;
+      li{
+        margin-bottom: 3%;
+        a{
+          img{
+            width: 100%;
+          }
+        }
+        @include mq(){
+          flex-basis: 45%;
+        }
+      }
+    }
+  }
+}
+
+/*************************************************
+スタッフ厳選
+*************************************************/
+
+#pickup{
+  background-image: url(../images/bgbgbg_02.png);
+  background-size: cover;
+  min-height: 100%;
+  background-attachment: fixed; /*--背景画像の固定--*/
+  background-repeat: no-repeat;
+  @include mq(){
+    background-image: url(../images/bgbgbg_02_sp.png);
+  }
+  .section_inner {
+    @include mq(){
+      padding: 0 20px;
+    }
+    .pickup_inner{
+      width: 100%;
+      margin-bottom: 10%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      a{
+        margin-bottom: 50px;
+      }
+      img{
+        width: 100%;
+      }
+      .pickup_flex_02{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+/*************************************************
+おすすめ商品
+*************************************************/
+
+#recommend{
+  background-color: #fff;
+  .section_inner {
+    @include mq(){
+      width: 100%;
+      padding-left: 20px;
+    }
+
+    .recommend_wrapper{
+      .recommend_slide {
+        position: relative;
+        li{
+          img{
+            width: fit-content;
+            margin: 0 auto;
+          }
+        }
+
+        .slick-arrow:before{
+          content:""!important;
+          width: 100%!important;
+          height: 100%!important;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .slick-next:before{
+          content: url(../images/right.svg)!important;
+        }
+        .slick-prev:before{
+          content: url(../images/left.svg)!important;
+        }
+        .slick-arrow{
+          z-index:2!important;
+          width:50px!important;
+          height:50px!important;
+        }
+        .slick-next{
+          right:-30px!important;
+        }
+        .slick-prev{
+          left:-30px!important;
+        }
+
+        .slick-arrow:before{
+          opacity:1!important;
+        }
+    }
+
+    @include mq(){
+      .sp_scroll{
+        display: flex;
+        overflow-x: scroll;
+        padding-bottom: 30px;
+        li{
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+  }
+
+  .kazari{
+    position: relative;
+    margin-top: 250px;
+    @include mq(){
+      margin-top: 180px;
+    }
+  }
+  .kazari::before{
+    position: absolute;
+    // content: url(../images/shisa.svg);
+    content: '';
+    display: inline-block;
+    width: 544px;
+    height: 189px;
+    background-image: url(../images/shisa.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -185px;
+    left:50%;
+    transform: translateX(-50%);
+    @include mq(){
+      width: 280px;
+      height: 100px;
+      top: -96px;
+    }
+  }
+}
+
+
+
+/*************************************************
+チェックした商品
+*************************************************/
+
+#checked{
+  // background-color: #FFEEEA;
+  .section_inner{
+    padding-bottom: 100px;
+    @include mq(){
+      width: 100%;
+      padding: 0 20px;
+      padding-bottom: 50px;
+    }
+    .checked_wrapper{
+      display: flex;
+      justify-content: space-between;
+      .checked_inner{
+        @include mq(){
+          width: 70px;
+        }
+        img{
+          margin-bottom: 15px;
+          @include mq(){
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+          }
+        }
+        p{
+          @include mq(){
+            font-size: 13px;
+          }
+        }
+        span{
+          @include mq(){
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
